@@ -1,0 +1,105 @@
+/* Responsive Styles */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  body {
+    padding: var(--spacing-lg);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .header-stats {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    width: 100%;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thd-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: var(--spacing-2xl);
+    margin: 10% auto;
+  }
+
+  .modal-header h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  body {
+    padding: var(--spacing-md);
+  }
+
+  .header {
+    padding: var(--spacing-lg);
+  }
+
+  .header h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-3xl);
+  }
+
+  .panel-card {
+    padding: var(--spacing-xl);
+  }
+
+  .metric-value {
+    font-size: var(--font-size-3xl);
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    max-height: 90vh;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1920px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+  }
+}

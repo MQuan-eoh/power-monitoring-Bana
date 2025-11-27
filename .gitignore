@@ -1,0 +1,38 @@
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if using npm in future)
+node_modules/
+package-lock.json
+
+# Environment files
+.env
+.env.local
+
+# Build files (if using build tools in future)
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Reference images (optional)
+*.jpg
+*.png
+!assets/**/*.jpg
+!assets/**/*.png
