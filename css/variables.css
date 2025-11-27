@@ -15,9 +15,9 @@
   --color-info: #60a5fa;
 
   /* Colors - Neutral */
-  --color-bg-dark: #1a1f2e;
-  --color-bg-card: rgba(30, 41, 59, 0.3);
-  --color-bg-card-hover: rgba(30, 41, 59, 0.4);
+  --color-bg-dark: #000000;
+  --color-bg-card: rgba(40, 45, 55, 0.5);
+  --color-bg-card-hover: rgba(50, 55, 65, 0.6);
   --color-text-primary: #f8fafc;
   --color-text-secondary: #e2e8f0;
   --color-text-muted: #cbd5e1;
@@ -26,10 +26,10 @@
   --color-text-very-subtle: #475569;
 
   /* Borders */
-  --border-color-subtle: rgba(255, 255, 255, 0.04);
-  --border-color-light: rgba(255, 255, 255, 0.08);
-  --border-color-medium: rgba(255, 255, 255, 0.1);
-  --border-color-accent: rgba(59, 130, 246, 0.3);
+  --border-color-subtle: rgba(255, 255, 255, 0.05);
+  --border-color-light: rgba(255, 255, 255, 0.1);
+  --border-color-medium: rgba(255, 255, 255, 0.15);
+  --border-color-accent: rgba(255, 255, 255, 0.2);
 
   /* Spacing */
   --spacing-xs: 4px;

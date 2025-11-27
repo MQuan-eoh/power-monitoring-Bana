@@ -19,26 +19,31 @@
   <body>
     <div class="header">
       <div class="header-content">
-        <div>
-          <h1>Bana Hills - Power Monitoring System</h1>
-          <p class="header-subtitle">Bana Hills Dashboard</p>
-        </div>
-        <div class="header-stats">
-          <div class="stat-item">
-            <div class="stat-label">Tổng công suất</div>
-            <div class="stat-value total" id="totalPower">0 kW</div>
+        <div class="summary-stats">
+          <div class="stat-card stat-devices">
+            <div class="stat-label">Số thiết bị</div>
+            <div class="stat-value" id="totalDevices">5</div>
+            <div class="stat-unit">Tủ điện</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-label">Tủ hoạt động</div>
-            <div class="stat-value active" id="activePanels">5/5</div>
+
+          <div class="stat-card stat-values">
+            <div class="stat-label">Số giá trị</div>
+            <div class="stat-value" id="totalValues">0</div>
+            <div class="stat-unit">Thông số</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-label">Cảnh báo</div>
-            <div class="stat-value warning" id="warnings">0</div>
+
+          <div class="stat-card stat-online">
+            <div class="stat-label">Online</div>
+            <div class="stat-value" id="onlineStatus">0/5</div>
+            <div class="stat-unit">Thiết bị</div>
           </div>
-          <div class="connection-status">
-            <div class="status-dot"></div>
-            <span>E-RA Connected</span>
+
+          <div class="stat-card stat-connection">
+            <div class="stat-label">Trạng thái kết nối</div>
+            <div class="connection-status">
+              <div class="status-dot"></div>
+              <span class="status-text">E-RA Connected</span>
+            </div>
           </div>
         </div>
       </div>

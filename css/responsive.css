@@ -11,19 +11,20 @@
   }
 
   .header-content {
-    flex-direction: column;
-    gap: var(--spacing-xl);
-    text-align: center;
-  }
-
-  .header h1 {
-    font-size: var(--font-size-3xl);
-  }
-
-  .header-stats {
-    flex-direction: column;
-    gap: var(--spacing-lg);
     width: 100%;
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-3xl);
   }
 
   .metrics-grid {
@@ -67,12 +68,21 @@
     padding: var(--spacing-lg);
   }
 
-  .header h1 {
-    font-size: var(--font-size-2xl);
+  .summary-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .stat-card {
+    padding: var(--spacing-sm) var(--spacing-md);
   }
 
   .stat-value {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+  }
+
+  .stat-label {
+    font-size: 9px;
   }
 
   .panel-card {
@@ -89,17 +99,29 @@
   }
 }
 
+/* Medium Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-4xl);
+  }
+}
+
 /* Large Desktop */
 @media (min-width: 1920px) {
   .dashboard-grid {
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   }
 
-  .header h1 {
-    font-size: 36px;
+  .summary-stats {
+    gap: var(--spacing-2xl);
   }
 
   .stat-value {
-    font-size: 32px;
+    font-size: var(--font-size-6xl);
   }
 }

@@ -14,6 +14,9 @@ export const state = {
     thd: [],
   },
   actions: [],
+  totalDevices: 5, // 5 tủ điện (panels)
+  onlineDevices: 0,
+  totalValues: 0,
 };
 
 // DOM Elements Cache
@@ -37,8 +40,10 @@ export const elements = {
   thdu1n: document.getElementById("thdu1n"),
   thdu2n: document.getElementById("thdu2n"),
   thdu3n: document.getElementById("thdu3n"),
-  totalPower: document.getElementById("totalPower"),
-  warnings: document.getElementById("warnings"),
+  // Header elements
+  totalDevices: document.getElementById("totalDevices"),
+  totalValues: document.getElementById("totalValues"),
+  onlineStatus: document.getElementById("onlineStatus"),
 };
 
 /**
@@ -54,16 +59,23 @@ export function updateElement(element, value, unit) {
 }
 
 /**
- * Check for warning conditions
+ * Update header statistics
  */
-export function checkWarnings(values) {
-  let warningCount = 0;
+export function updateHeaderStats(valuesCount) {
+  // Update total values count
+  state.totalValues = valuesCount;
+  if (elements.totalValues) {
+    elements.totalValues.textContent = valuesCount;
+  }
 
-  // Check THD values
-  state.configs.thd.forEach((config) => {
-    const value = values[config?.id]?.value;
-    if (value && value > 5) warningCount++;
-  });
+  // Update online status (simplified: if we receive data, assume online)
+  state.onlineDevices = valuesCount > 0 ? state.totalDevices : 0;
+  if (elements.onlineStatus) {
+    elements.onlineStatus.textContent = `${state.onlineDevices}/${state.totalDevices}`;
+  }
 
-  elements.warnings.textContent = warningCount;
+  // Update total devices display
+  if (elements.totalDevices) {
+    elements.totalDevices.textContent = state.totalDevices;
+  }
 }
