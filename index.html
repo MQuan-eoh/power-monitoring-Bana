@@ -17,249 +17,253 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="header-content">
-        <div class="summary-stats">
-          <div class="stat-card stat-devices">
-            <div class="stat-label">Số thiết bị</div>
-            <div class="stat-value" id="totalDevices">5</div>
-            <div class="stat-unit">Tủ điện</div>
-          </div>
+    <div class="main-container">
+      <div class="header">
+        <div class="header-content">
+          <div class="summary-stats">
+            <div class="stat-card stat-devices">
+              <div class="stat-label">Số thiết bị</div>
+              <div class="stat-value" id="totalDevices">5</div>
+              <div class="stat-unit">Tủ điện</div>
+            </div>
 
-          <div class="stat-card stat-values">
-            <div class="stat-label">Số giá trị</div>
-            <div class="stat-value" id="totalValues">0</div>
-            <div class="stat-unit">Thông số</div>
-          </div>
+            <div class="stat-card stat-values">
+              <div class="stat-label">Số giá trị</div>
+              <div class="stat-value" id="totalValues">0</div>
+              <div class="stat-unit">Thông số</div>
+            </div>
 
-          <div class="stat-card stat-online">
-            <div class="stat-label">Online</div>
-            <div class="stat-value" id="onlineStatus">0/5</div>
-            <div class="stat-unit">Thiết bị</div>
-          </div>
+            <div class="stat-card stat-online">
+              <div class="stat-label">Online</div>
+              <div class="stat-value" id="onlineStatus">0/5</div>
+              <div class="stat-unit">Thiết bị</div>
+            </div>
 
-          <div class="stat-card stat-connection">
-            <div class="stat-label">Trạng thái kết nối</div>
-            <div class="connection-status">
+            <div class="stat-card stat-connection">
+              <div class="stat-label">Trạng thái kết nối</div>
+              <div class="connection-status">
+                <div class="status-dot"></div>
+                <span class="status-text">E-RA Connected</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 1: Điện áp -->
+      <div class="dashboard-grid">
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">⚡ Tủ Điện 1 - Điện Áp</div>
+            <div class="panel-status">
               <div class="status-dot"></div>
-              <span class="status-text">E-RA Connected</span>
+              <span>ONLINE</span>
             </div>
           </div>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-label">U1-N</div>
+              <div class="metric-value" id="u1n">
+                --<span class="metric-unit">V</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">U2-N</div>
+              <div class="metric-value" id="u2n">
+                --<span class="metric-unit">V</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">U3-N</div>
+              <div class="metric-value" id="u3n">
+                --<span class="metric-unit">V</span>
+              </div>
+            </div>
+          </div>
+          <div class="controls">
+            <button class="btn btn-primary" onclick="showHistory('voltage')">
+              Lịch sử
+            </button>
+            <button class="btn btn-secondary" onclick="showDetails('voltage')">
+              Chi tiết
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Panel 1: Điện áp -->
-    <div class="dashboard-grid">
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="panel-title">⚡ Tủ Điện 1 - Điện Áp</div>
-          <div class="panel-status">
-            <div class="status-dot"></div>
-            <span>ONLINE</span>
-          </div>
-        </div>
-        <div class="metrics-grid">
-          <div class="metric-box">
-            <div class="metric-label">U1-N</div>
-            <div class="metric-value" id="u1n">
-              --<span class="metric-unit">V</span>
+        <!-- Panel 2: Dòng điện -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">⚡ Tủ Điện 1 - Dòng Điện</div>
+            <div class="panel-status">
+              <div class="status-dot"></div>
+              <span>ONLINE</span>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">U2-N</div>
-            <div class="metric-value" id="u2n">
-              --<span class="metric-unit">V</span>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-label">I1</div>
+              <div class="metric-value" id="i1">
+                --<span class="metric-unit">A</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">I2</div>
+              <div class="metric-value" id="i2">
+                --<span class="metric-unit">A</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">I3</div>
+              <div class="metric-value" id="i3">
+                --<span class="metric-unit">A</span>
+              </div>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">U3-N</div>
-            <div class="metric-value" id="u3n">
-              --<span class="metric-unit">V</span>
-            </div>
+          <div class="controls">
+            <button class="btn btn-primary" onclick="showHistory('current')">
+              Lịch sử
+            </button>
+            <button class="btn btn-secondary" onclick="showDetails('current')">
+              Chi tiết
+            </button>
           </div>
         </div>
-        <div class="controls">
-          <button class="btn btn-primary" onclick="showHistory('voltage')">
-            Lịch sử
-          </button>
-          <button class="btn btn-secondary" onclick="showDetails('voltage')">
-            Chi tiết
-          </button>
-        </div>
-      </div>
 
-      <!-- Panel 2: Dòng điện -->
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="panel-title">⚡ Tủ Điện 1 - Dòng Điện</div>
-          <div class="panel-status">
-            <div class="status-dot"></div>
-            <span>ONLINE</span>
-          </div>
-        </div>
-        <div class="metrics-grid">
-          <div class="metric-box">
-            <div class="metric-label">I1</div>
-            <div class="metric-value" id="i1">
-              --<span class="metric-unit">A</span>
+        <!-- Panel 3: Công suất -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">💡 Tủ Điện 1 - Công Suất</div>
+            <div class="panel-status">
+              <div class="status-dot"></div>
+              <span>ONLINE</span>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">I2</div>
-            <div class="metric-value" id="i2">
-              --<span class="metric-unit">A</span>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-label">P</div>
+              <div class="metric-value" id="power">
+                --<span class="metric-unit">kW</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Q</div>
+              <div class="metric-value" id="reactivepower">
+                --<span class="metric-unit">kVAr</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">S</div>
+              <div class="metric-value" id="apparentpower">
+                --<span class="metric-unit">kVA</span>
+              </div>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">I3</div>
-            <div class="metric-value" id="i3">
-              --<span class="metric-unit">A</span>
-            </div>
+          <div class="controls">
+            <button class="btn btn-primary" onclick="showHistory('power')">
+              Lịch sử
+            </button>
+            <button class="btn btn-secondary" onclick="showDetails('power')">
+              Chi tiết
+            </button>
           </div>
         </div>
-        <div class="controls">
-          <button class="btn btn-primary" onclick="showHistory('current')">
-            Lịch sử
-          </button>
-          <button class="btn btn-secondary" onclick="showDetails('current')">
-            Chi tiết
-          </button>
-        </div>
-      </div>
 
-      <!-- Panel 3: Công suất -->
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="panel-title">💡 Tủ Điện 1 - Công Suất</div>
-          <div class="panel-status">
-            <div class="status-dot"></div>
-            <span>ONLINE</span>
-          </div>
-        </div>
-        <div class="metrics-grid">
-          <div class="metric-box">
-            <div class="metric-label">P</div>
-            <div class="metric-value" id="power">
-              --<span class="metric-unit">kW</span>
+        <!-- Panel 4: Pmax, Imax -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">📈 Tủ Điện 1 - Giá Trị Đỉnh</div>
+            <div class="panel-status">
+              <div class="status-dot"></div>
+              <span>ONLINE</span>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">Q</div>
-            <div class="metric-value" id="reactivepower">
-              --<span class="metric-unit">kVAr</span>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-label">Pmax</div>
+              <div class="metric-value" id="pmax">
+                --<span class="metric-unit">kW</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Imax</div>
+              <div class="metric-value" id="imax">
+                --<span class="metric-unit">A</span>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Năng lượng</div>
+              <div class="metric-value" id="energy">
+                --<span class="metric-unit">kWh</span>
+              </div>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">S</div>
-            <div class="metric-value" id="apparentpower">
-              --<span class="metric-unit">kVA</span>
-            </div>
+          <div class="controls">
+            <button class="btn btn-primary" onclick="resetPeak()">
+              Reset đỉnh
+            </button>
+            <button class="btn btn-secondary" onclick="showDetails('peak')">
+              Chi tiết
+            </button>
           </div>
         </div>
-        <div class="controls">
-          <button class="btn btn-primary" onclick="showHistory('power')">
-            Lịch sử
-          </button>
-          <button class="btn btn-secondary" onclick="showDetails('power')">
-            Chi tiết
-          </button>
-        </div>
-      </div>
 
-      <!-- Panel 4: Pmax, Imax -->
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="panel-title">📈 Tủ Điện 1 - Giá Trị Đỉnh</div>
-          <div class="panel-status">
-            <div class="status-dot"></div>
-            <span>ONLINE</span>
-          </div>
-        </div>
-        <div class="metrics-grid">
-          <div class="metric-box">
-            <div class="metric-label">Pmax</div>
-            <div class="metric-value" id="pmax">
-              --<span class="metric-unit">kW</span>
+        <!-- Panel 5: THD -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">📊 Tủ Điện 1 - THD</div>
+            <div class="panel-status">
+              <div class="status-dot"></div>
+              <span>ONLINE</span>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">Imax</div>
-            <div class="metric-value" id="imax">
-              --<span class="metric-unit">A</span>
+          <div class="thd-sections-wrapper">
+            <div class="thd-section">
+              <div class="thd-title">THD Dòng Điện</div>
+              <div class="thd-grid">
+                <div class="thd-item">
+                  <div class="thd-label">THD</div>
+                  <div class="thd-value" id="thd">--%</div>
+                </div>
+                <div class="thd-item">
+                  <div class="thd-label">THD I1</div>
+                  <div class="thd-value" id="thdi1">--%</div>
+                </div>
+                <div class="thd-item">
+                  <div class="thd-label">THD I2</div>
+                  <div class="thd-value" id="thdi2">--%</div>
+                </div>
+                <div class="thd-item">
+                  <div class="thd-label">THD I3</div>
+                  <div class="thd-value" id="thdi3">--%</div>
+                </div>
+              </div>
+            </div>
+            <div class="thd-section thd-section-spacing">
+              <div class="thd-title">THD Điện Áp</div>
+              <div class="thd-grid">
+                <div class="thd-item">
+                  <div class="thd-label">THD U1-N</div>
+                  <div class="thd-value" id="thdu1n">--%</div>
+                </div>
+                <div class="thd-item">
+                  <div class="thd-label">THD U2-N</div>
+                  <div class="thd-value" id="thdu2n">--%</div>
+                </div>
+                <div class="thd-item">
+                  <div class="thd-label">THD U3-N</div>
+                  <div class="thd-value" id="thdu3n">--%</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="metric-box">
-            <div class="metric-label">Năng lượng</div>
-            <div class="metric-value" id="energy">
-              --<span class="metric-unit">kWh</span>
-            </div>
+          <div class="controls">
+            <button class="btn btn-primary" onclick="showHistory('thd')">
+              Xu hướng THD
+            </button>
+            <button class="btn btn-secondary" onclick="analyzeTHD()">
+              Phân tích
+            </button>
           </div>
-        </div>
-        <div class="controls">
-          <button class="btn btn-primary" onclick="resetPeak()">
-            Reset đỉnh
-          </button>
-          <button class="btn btn-secondary" onclick="showDetails('peak')">
-            Chi tiết
-          </button>
-        </div>
-      </div>
-
-      <!-- Panel 5: THD -->
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="panel-title">📊 Tủ Điện 1 - THD</div>
-          <div class="panel-status">
-            <div class="status-dot"></div>
-            <span>ONLINE</span>
-          </div>
-        </div>
-        <div class="thd-section">
-          <div class="thd-title">THD Dòng Điện</div>
-          <div class="thd-grid">
-            <div class="thd-item">
-              <div class="thd-label">THD</div>
-              <div class="thd-value" id="thd">--%</div>
-            </div>
-            <div class="thd-item">
-              <div class="thd-label">THD I1</div>
-              <div class="thd-value" id="thdi1">--%</div>
-            </div>
-            <div class="thd-item">
-              <div class="thd-label">THD I2</div>
-              <div class="thd-value" id="thdi2">--%</div>
-            </div>
-            <div class="thd-item">
-              <div class="thd-label">THD I3</div>
-              <div class="thd-value" id="thdi3">--%</div>
-            </div>
-          </div>
-        </div>
-        <div class="thd-section thd-section-spacing">
-          <div class="thd-title">THD Điện Áp</div>
-          <div class="thd-grid">
-            <div class="thd-item">
-              <div class="thd-label">THD U1-N</div>
-              <div class="thd-value" id="thdu1n">--%</div>
-            </div>
-            <div class="thd-item">
-              <div class="thd-label">THD U2-N</div>
-              <div class="thd-value" id="thdu2n">--%</div>
-            </div>
-            <div class="thd-item">
-              <div class="thd-label">THD U3-N</div>
-              <div class="thd-value" id="thdu3n">--%</div>
-            </div>
-          </div>
-        </div>
-        <div class="controls">
-          <button class="btn btn-primary" onclick="showHistory('thd')">
-            Xu hướng THD
-          </button>
-          <button class="btn btn-secondary" onclick="analyzeTHD()">
-            Phân tích
-          </button>
         </div>
       </div>
     </div>

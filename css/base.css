@@ -7,11 +7,39 @@
 
 body {
   font-family: var(--font-family);
-  background: #1a1a1af0;
+  background-image: url("../assets/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--color-text-secondary);
   min-height: 100vh;
   padding: var(--spacing-2xl);
   position: relative;
+}
+
+/* Dark overlay to reduce background brightness and improve focus on panels */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(3px) saturate(0.8);
+  backdrop-filter: blur(3px) saturate(0.8);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure content stays above the overlay */
+.main-container,
+.header,
+.dashboard-grid,
+.panel-card,
+.stat-card {
+  position: relative;
+  z-index: 1;
 }
 
 /* Animations */
